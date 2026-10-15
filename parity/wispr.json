@@ -16,7 +16,7 @@
   {
    "name": "pricing",
    "orig": "/pricing",
-   "clone": "/wisprflowisdead",
+   "clone": "/wisprflowisdead/pricing",
    "full": true
   },
   {
@@ -24,5 +24,8 @@
    "orig": "/get-started",
    "clone": "/wisprflowisdead/login"
   }
+ ],
+ "block": [
+  "usercentrics"
  ]
 }
