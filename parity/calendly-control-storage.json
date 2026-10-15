@@ -1,0 +1,217 @@
+{
+ "cookies": [
+  {
+   "name": "country",
+   "value": "US",
+   "domain": "calendly.com",
+   "path": "/",
+   "expires": -1,
+   "httpOnly": false,
+   "secure": true,
+   "sameSite": "Strict"
+  },
+  {
+   "name": "CALENDLY_AUTHENTICATED_USER_STATUS",
+   "value": "false",
+   "domain": "calendly.com",
+   "path": "/",
+   "expires": -1,
+   "httpOnly": false,
+   "secure": true,
+   "sameSite": "Strict"
+  },
+  {
+   "name": "cal_anonymous_id",
+   "value": "86668bd5-f7ee-48b1-bfb2-407f0433282c",
+   "domain": "calendly.com",
+   "path": "/",
+   "expires": 1823565313.815857,
+   "httpOnly": false,
+   "secure": true,
+   "sameSite": "Lax"
+  },
+  {
+   "name": "__cf_bm",
+   "value": "HaN9x1XXAjOM.perEG8HTx0hAa8j1vy14tDFgr54DfM-1792029313.8003902-1.0.1.1-Xzq9kuVmbP9iNdKsYMpJQzzVRjy4T1nWYAddTDr_annNwwgPrdwJtDiIVS.QPw11hWLC1SJdv9wrzuLCAy7o82mxmQF0sll5v23XBy0AZwizCwB2VE_gK1Nqi5egCglf",
+   "domain": ".calendly.com",
+   "path": "/",
+   "expires": 1792031113.81587,
+   "httpOnly": true,
+   "secure": true,
+   "sameSite": "None"
+  },
+  {
+   "name": "_cfuvid",
+   "value": "ZuyGG5fUvYYwtutp7Vz6KaR.Eqneyz699GR.f8dh1O0-1792029313.8003902-1.0.1.1-ny8qWinaON0.QL2rhYfeTyYjwMpQg83UCDGQ1VDFizE",
+   "domain": ".calendly.com",
+   "path": "/",
+   "expires": -1,
+   "httpOnly": true,
+   "secure": true,
+   "sameSite": "None"
+  },
+  {
+   "name": "__cf_bm",
+   "value": "JnM3NiWzoMq1NIJrDtV3.gVUsVv.Oxekc00SLng1ANc-1792029313.8862584-1.0.1.1-mkSmSFlsMeC8jsyfnHl7Wwki2KXCbhgjvLJ9Zn90ySbWWiiRrwLgEnFZM2IwEPkmsyVnSj4.n2ar_2.kHsBh3cpIHGxxBNADK7JzqQUCJ1BAZ4SuJbK42dwDOGTRKARM",
+   "domain": ".pages.calendly.com",
+   "path": "/",
+   "expires": 1792031113.87716,
+   "httpOnly": true,
+   "secure": true,
+   "sameSite": "None"
+  },
+  {
+   "name": "__cf_bm",
+   "value": "gWZ8XuhhC_s3KhrzCpm1UVawyoCC66ybMuDSMcQISnc-1792029313.9151354-1.0.1.1-DI8VEH.kp4NpmFBbObQvDqjOFW28jWDLrqXvDnH6lcAtLgxwev9IOBoHqCXwqd5Rz8R4ZWk71hVsn6XUcKBPlppXgyp_ZduPQOygURTO3k.MXyX7G4K7zTEE0PkcakrY",
+   "domain": ".calendlycms.com",
+   "path": "/",
+   "expires": 1792031113.915478,
+   "httpOnly": true,
+   "secure": true,
+   "sameSite": "None"
+  },
+  {
+   "name": "_swb",
+   "value": "a52a8e72-88f6-4fe2-b4ff-f0b4f576933a",
+   "domain": ".calendly.com",
+   "path": "/",
+   "expires": 1826589316,
+   "httpOnly": false,
+   "secure": true,
+   "sameSite": "None"
+  },
+  {
+   "name": "OptanonConsent",
+   "value": "isGpcEnabled=0&datestamp=Wed+Oct+14+2026+21%3A55%3A16+GMT-0400+(Eastern+Daylight+Time)&version=202508.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=76ea5ee9-7dab-4fe5-8236-fac24b3f3e0f&interactionCount=0&isAnonUser=1&landingPath=https%3A%2F%2Fcalendly.com%2F&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1",
+   "domain": ".calendly.com",
+   "path": "/",
+   "expires": 1823565316,
+   "httpOnly": false,
+   "secure": true,
+   "sameSite": "None"
+  },
+  {
+   "name": "_ketch_consent_v1_",
+   "value": "eyJlc3NlbnRpYWxfc2VydmljZXMiOnsic3RhdHVzIjoiZ3JhbnRlZCIsImNhbm9uaWNhbFB1cnBvc2VzIjpbImVzc2VudGlhbF9zZXJ2aWNlcyJdfX0%3D",
+   "domain": ".calendly.com",
+   "path": "/",
+   "expires": 1826589317,
+   "httpOnly": false,
+   "secure": true,
+   "sameSite": "None"
+  },
+  {
+   "name": "_swb_consent_",
+   "value": "eyJjb2xsZWN0ZWRBdCI6MTc5MjAyOTMxNywiY29udGV4dCI6eyJjb25maWd1cmF0aW9uSWQiOiJZMkZzWlc1a2JIa3ZkMlZpYzJsMFpWOXpiV0Z5ZEY5MFlXY3ZjSEp2WkhWamRHbHZiaTkxYzE5d2NtbDJZV041WDNKcFoyaDBjeTlsYmk4eE56ZzVPVEE0TXpJeiIsImlzc3VlZEF0IjowLCJzb3VyY2UiOiJsZWdhbEJhc2lzRGVmYXVsdCJ9LCJjb250cm9sbGVyQ29kZSI6IiIsImVudmlyb25tZW50Q29kZSI6InByb2R1Y3Rpb24iLCJpZGVudGl0aWVzIjp7InN3Yl93ZWJzaXRlX3NtYXJ0X3RhZyI6ImE1MmE4ZTcyLTg4ZjYtNGZlMi1iNGZmLWYwYjRmNTc2OTMzYSJ9LCJqdXJpc2RpY3Rpb25Db2RlIjoidXNfcHJpdmFjeV9yaWdodHMiLCJwcm9wZXJ0eUNvZGUiOiJ3ZWJzaXRlX3NtYXJ0X3RhZyIsInB1cnBvc2VzIjp7ImVzc2VudGlhbF9zZXJ2aWNlcyI6eyJhbGxvd2VkIjoidHJ1ZSIsImNvbGxlY3RlZEF0IjowLCJpc3N1ZWRBdCI6MCwibGVnYWxCYXNpc0NvZGUiOiJkaXNjbG9zdXJlIiwic291cmNlIjoiIn19LCJpbnRlcmFjdGl2ZSI6ZmFsc2UsImNhY2hlZEF0IjoxNzkyMDI5MzE3fQ%3D%3D",
+   "domain": ".calendly.com",
+   "path": "/",
+   "expires": 1792634117,
+   "httpOnly": false,
+   "secure": true,
+   "sameSite": "None"
+  },
+  {
+   "name": "ajs_anonymous_id",
+   "value": "8b46ad7e-3e3c-48b1-a212-1e080dac0909",
+   "domain": ".calendly.com",
+   "path": "/",
+   "expires": 1823565318,
+   "httpOnly": false,
+   "secure": false,
+   "sameSite": "Lax"
+  },
+  {
+   "name": "analytics_session_id",
+   "value": "1792029318347",
+   "domain": ".calendly.com",
+   "path": "/",
+   "expires": 1823565318,
+   "httpOnly": false,
+   "secure": false,
+   "sameSite": "Lax"
+  },
+  {
+   "name": "analytics_session_id.last_access",
+   "value": "1792029318356",
+   "domain": ".calendly.com",
+   "path": "/",
+   "expires": 1823565318,
+   "httpOnly": false,
+   "secure": false,
+   "sameSite": "Lax"
+  },
+  {
+   "name": "AMP_824b78ade7",
+   "value": "JTdCJTIyZGV2aWNlSWQlMjIlM0ElMjI4YjQ2YWQ3ZS0zZTNjLTQ4YjEtYTIxMi0xZTA4MGRhYzA5MDklMjIlMkMlMjJzZXNzaW9uSWQlMjIlM0ExNzkyMDI5MzE4MzQ3JTJDJTIyb3B0T3V0JTIyJTNBZmFsc2UlMkMlMjJwYWdlQ291bnRlciUyMiUzQTAlMkMlMjJjb29raWVEb21haW4lMjIlM0ElMjIuY2FsZW5kbHkuY29tJTIyJTdE",
+   "domain": ".calendly.com",
+   "path": "/",
+   "expires": 1823565318,
+   "httpOnly": false,
+   "secure": false,
+   "sameSite": "Lax"
+  }
+ ],
+ "origins": [
+  {
+   "origin": "https://calendly.com",
+   "localStorage": [
+    {
+     "name": "STATSIG_LOCAL_STORAGE_STABLE_ID",
+     "value": "00f28d66-390a-4faa-9c90-a9272501514a"
+    },
+    {
+     "name": "analytics_session_id",
+     "value": "1792029318347"
+    },
+    {
+     "name": "edgeExtensionInstalled",
+     "value": "false"
+    },
+    {
+     "name": "ajs_user_traits",
+     "value": "{\"authenticatedUserStatus\":false,\"cal_anonymous_id\":\"86668bd5-f7ee-48b1-bfb2-407f0433282c\",\"country_code\":\"US\"}"
+    },
+    {
+     "name": "analytics_session_id.last_access",
+     "value": "1792029318356"
+    },
+    {
+     "name": "AMP_remote_config_824b78ade7",
+     "value": "{\"remoteConfig\":{\"configs\":{\"diagnostics\":{\"browserSDK\":{\"sampleRate\":0.02}},\"sessionReplay\":{\"sr_interaction_config\":{\"batch\":false,\"enabled\":true},\"sr_privacy_config\":{\"maskSelector\":[],\"blockSelector\":[],\"unmaskSelector\":[],\"defaultMaskLevel\":\"medium\"},\"sr_sampling_config\":{\"capture_enabled\":true,\"sample_rate\":1},\"sr_logging_config\":{\"console\":{\"levels\":[\"info\",\"log\",\"warn\",\"error\"],\"enabled\":true},\"network\":{\"enabled\":false}}},\"analyticsSDK\":{}}},\"lastFetch\":\"2026-10-15T01:55:18.396Z\"}"
+    },
+    {
+     "name": "ffExtensionInstalled",
+     "value": "false"
+    },
+    {
+     "name": "AMP_SR_START_824b78ade7_1792029318347",
+     "value": "1792029318397"
+    },
+    {
+     "name": "chromeExtensionInstalled",
+     "value": "false"
+    },
+    {
+     "name": "_swb_consent_",
+     "value": "eyJjb2xsZWN0ZWRBdCI6MTc5MjAyOTMxNywiY29udGV4dCI6eyJjb25maWd1cmF0aW9uSWQiOiJZMkZzWlc1a2JIa3ZkMlZpYzJsMFpWOXpiV0Z5ZEY5MFlXY3ZjSEp2WkhWamRHbHZiaTkxYzE5d2NtbDJZV041WDNKcFoyaDBjeTlsYmk4eE56ZzVPVEE0TXpJeiIsImlzc3VlZEF0IjowLCJzb3VyY2UiOiJsZWdhbEJhc2lzRGVmYXVsdCJ9LCJjb250cm9sbGVyQ29kZSI6IiIsImVudmlyb25tZW50Q29kZSI6InByb2R1Y3Rpb24iLCJpZGVudGl0aWVzIjp7InN3Yl93ZWJzaXRlX3NtYXJ0X3RhZyI6ImE1MmE4ZTcyLTg4ZjYtNGZlMi1iNGZmLWYwYjRmNTc2OTMzYSJ9LCJqdXJpc2RpY3Rpb25Db2RlIjoidXNfcHJpdmFjeV9yaWdodHMiLCJwcm9wZXJ0eUNvZGUiOiJ3ZWJzaXRlX3NtYXJ0X3RhZyIsInByb3RvY29scyI6e30sInB1cnBvc2VzIjp7ImVzc2VudGlhbF9zZXJ2aWNlcyI6eyJhbGxvd2VkIjoidHJ1ZSIsImNvbGxlY3RlZEF0IjowLCJpc3N1ZWRBdCI6MCwibGVnYWxCYXNpc0NvZGUiOiJkaXNjbG9zdXJlIiwic291cmNlIjoiIn19LCJ2ZW5kb3JDb25zZW50cyI6e30sImludGVyYWN0aXZlIjpmYWxzZSwiY2FjaGVkQXQiOjE3OTIwMjkzMTd9"
+    },
+    {
+     "name": "ajs_anonymous_id",
+     "value": "\"8b46ad7e-3e3c-48b1-a212-1e080dac0909\""
+    },
+    {
+     "name": "ajs_user_id",
+     "value": "null"
+    },
+    {
+     "name": "_swb_consent__metadata",
+     "value": "eyJpYXQiOjE3OTIwMjkzMTcsImV4cCI6MTc5MjExNTcxN30="
+    },
+    {
+     "name": "_ketch_consent_v1_",
+     "value": "eyJlc3NlbnRpYWxfc2VydmljZXMiOnsic3RhdHVzIjoiZ3JhbnRlZCIsImNhbm9uaWNhbFB1cnBvc2VzIjpbImVzc2VudGlhbF9zZXJ2aWNlcyJdfX0="
+    }
+   ]
+  }
+ ]
+}

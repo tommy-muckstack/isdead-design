@@ -1,0 +1,85 @@
+{
+  "name": "otter",
+  "source": "otter.ai homepage look (white + deep-blue sections, cobalt #1B47F5, rounded 12px, warm record-orange), measured 2026-10-14; original art",
+  "font": {
+    "sans": "Outfit",
+    "display": "Outfit",
+    "files": {
+      "Outfit": "otter/Outfit-Variable.woff2"
+    },
+    "mono": "ui-monospace, SFMono-Regular, Menlo, monospace",
+    "note": "Otter's brand type is a proprietary geometric sans (not shipped). Outfit (OFL) is our lookalike: round geometric forms with a single-storey a-less feel at display sizes and friendly proportions."
+  },
+  "color": {
+    "bg": "#FFFFFF",
+    "surface": "#FFFFFF",
+    "surfaceAlt": "#F3F6FD",
+    "text": "#0B1530",
+    "textMuted": "#4C587A",
+    "textSubtle": "#8591B0",
+    "border": "#DCE3F3",
+    "borderStrong": "#0B1530",
+    "danger": "#D92D4B",
+    "success": "#13875B",
+    "warning": "#C77700",
+    "onPrimary": "#FFFFFF",
+    "onAccent": "#FFFFFF",
+    "primary": "#1B47F5",
+    "primaryHover": "#1233C4",
+    "accent": "#FF6B3D",
+    "accentHover": "#E8552B",
+    "accentSoft": "#E8EEFF",
+    "focus": "#1B47F5",
+    "heroFrom": "#EAF0FF",
+    "heroMid": "#FFFFFF",
+    "heroTo": "#FFEDE6"
+  },
+  "radius": {
+    "xs": "4px",
+    "sm": "8px",
+    "md": "10px",
+    "lg": "14px",
+    "xl": "24px",
+    "pill": "9999px"
+  },
+  "space": {
+    "1": "4px",
+    "2": "8px",
+    "3": "12px",
+    "4": "16px",
+    "5": "20px",
+    "6": "24px",
+    "8": "32px",
+    "10": "40px",
+    "12": "48px",
+    "16": "64px"
+  },
+  "shadow": {
+    "sm": "0 1px 2px rgba(11,21,48,.08)",
+    "md": "0 6px 18px rgba(11,21,48,.10)",
+    "lg": "0 18px 48px rgba(11,21,48,.16)"
+  },
+  "type": {
+    "xs": "12px",
+    "sm": "14px",
+    "md": "16px",
+    "lg": "18px",
+    "xl": "24px",
+    "2xl": "32px",
+    "3xl": "44px",
+    "4xl": "56px",
+    "weightBody": 400,
+    "weightStrong": 600,
+    "weightHeading": 600,
+    "tracking": "-0.02em",
+    "lineHeight": 1.5
+  },
+  "control": {
+    "height": "46px",
+    "heightSm": "34px",
+    "borderWidth": "1px",
+    "buttonRadius": "12px",
+    "inputRadius": "10px",
+    "cardRadius": "18px"
+  }
+}

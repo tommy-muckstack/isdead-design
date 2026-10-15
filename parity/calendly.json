@@ -1,0 +1,44 @@
+{
+  "app": "calendlyisdead",
+  "orig": "https://calendly.com",
+  "clone": "http://localhost:3200/calendlyisdead",
+  "viewports": [
+    "1440x900",
+    "390x844"
+  ],
+  "pages": [
+    {
+      "name": "home",
+      "orig": "/",
+      "clone": "/",
+      "full": true
+    },
+    {
+      "name": "login",
+      "orig": "/login",
+      "clone": "/login"
+    },
+    {
+      "name": "pricing",
+      "orig": "/pricing",
+      "clone": "/pricing",
+      "full": true
+    },
+    {
+      "name": "signup",
+      "orig": "/signup",
+      "clone": "/signup"
+    },
+    {
+      "name": "booking",
+      "orig": "/tommykeeley-mail/30min",
+      "clone": "/demo/30min"
+    },
+    {
+      "name": "profile",
+      "orig": "/tommykeeley-mail",
+      "clone": "/demo"
+    }
+  ],
+  "origStorage": "/workspace/isdead-design/parity/calendly-control-storage.json"
+}
