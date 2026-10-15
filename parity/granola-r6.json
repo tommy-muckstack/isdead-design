@@ -1,0 +1,27 @@
+{
+ "app": "granolaisdead",
+ "orig": "https://www.granola.ai",
+ "clone": "http://localhost:3302/granolaisdead",
+ "viewports": [
+  "1440x900",
+  "390x844"
+ ],
+ "pages": [
+  {
+   "name": "home",
+   "orig": "/",
+   "clone": "/",
+   "full": true
+  },
+  {
+   "name": "pricing",
+   "orig": "/pricing",
+   "clone": "/pricing",
+   "full": true
+  }
+ ],
+ "origKeepAnim": true,
+ "scrollStep": 300,
+ "scrollDwell": 200,
+ "out": "/workspace/isdead-shots/parity/granolaisdead/r6"
+}

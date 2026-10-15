@@ -8,7 +8,7 @@ const errs = []; p.on("pageerror", e => errs.push(e.message)); p.on("console", m
 await p.goto(base + "/login", { waitUntil: "networkidle" });
 const body0 = (await p.textContent("body")).replace(/\s+/g," ").slice(0,200);
 // switch to sign up
-const toggle = p.getByRole("button", { name: /create|sign up|new here|need an account/i }).or(p.getByText(/create an account|sign up|new here/i)).first();
+const toggle = p.getByRole("button", { name: /create an account/i }).or(p.getByText(/create an account|new here/i)).first();
 if (await toggle.count()) await toggle.click();
 await p.fill('input[type=email], #email, input[name=email]', email);
 await p.fill('input[type=password], #password, input[name=password]', pw);

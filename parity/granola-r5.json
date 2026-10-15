@@ -18,19 +18,10 @@
    "orig": "/pricing",
    "clone": "/pricing",
    "full": true
-  },
-  {
-   "name": "login",
-   "orig": "/",
-   "clone": "/login"
-  },
-  {
-   "name": "signup",
-   "orig": "/",
-   "clone": "/login"
   }
  ],
  "origKeepAnim": true,
  "scrollStep": 300,
- "scrollDwell": 200
+ "scrollDwell": 200,
+ "note": "Granola original has no web login/signup (/login 404, notes.granola.ai redirects home): n/a"
 }

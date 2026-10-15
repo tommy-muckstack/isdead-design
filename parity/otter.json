@@ -29,5 +29,9 @@
    "orig": "https://otter.ai/signin",
    "clone": "/login"
   }
- ]
+ ],
+ "origMust": {
+  "1440": "Before, during, and after every meeting",
+  "390": "Like having your own executive assistant"
+ }
 }
