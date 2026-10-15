@@ -20,12 +20,12 @@
   },
   {
    "name": "login",
-   "orig": "/login",
+   "orig": "https://id.atlassian.com/login?application=trello&continue=https%3A%2F%2Ftrello.com%2Fauth%2Fatlassian%2Fcallback%3Fdisplay%3DeyJ2ZXJpZnlFbWFpbCI6bnVsbH0%3D",
    "clone": "/login"
   },
   {
    "name": "signup",
-   "orig": "/signup",
+   "orig": "https://id.atlassian.com/login?application=trello&continue=https%3A%2F%2Ftrello.com%2Fauth%2Fatlassian%2Fcallback%3Fdisplay%3DeyJ2ZXJpZnlFbWFpbCI6bnVsbH0%3D",
    "clone": "/login?mode=signup"
   }
  ],

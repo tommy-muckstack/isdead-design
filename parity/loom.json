@@ -27,7 +27,7 @@
   {
    "name": "signup",
    "orig": "/signup",
-   "clone": "/login"
+   "clone": "/login?mode=signup"
   }
  ]
 }
