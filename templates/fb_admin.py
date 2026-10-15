@@ -3,6 +3,7 @@
   fb_admin.py domains            -> list authorized domains
   fb_admin.py add-domain HOST... -> add authorized domains
   fb_admin.py delete-user EMAIL  -> delete an Auth user (test cleanup)
+  fb_admin.py purge-smoke [--dry] -> delete every throwaway smoke account (smoke+*@example.com / isdead-smoke-*@example.com)
 """
 import json, sys, time, base64, os, requests
 from cryptography.hazmat.primitives import hashes, serialization
@@ -39,3 +40,17 @@ elif cmd == "delete-user":
     for u in us:
         x = requests.post(f"https://identitytoolkit.googleapis.com/v1/projects/{P}/accounts:delete", headers=H, json={"localId": u["localId"]}); print("deleted", x.status_code)
     if not us: print("no such user", r.status_code, r.text[:200])
+elif cmd == "purge-smoke":
+    import re
+    pat = re.compile(r"^(smoke[+-][^@]*|isdead-smoke-[^@]*)@example\.com$", re.I)
+    tok, hits = None, []
+    while True:
+        r = requests.get(f"https://identitytoolkit.googleapis.com/v1/projects/{P}/accounts:batchGet", headers=H, params={"maxResults": 500, **({"nextPageToken": tok} if tok else {})})
+        if r.status_code != 200: print("batchGet failed", r.status_code, r.text[:200]); sys.exit(1)
+        j = r.json(); hits += [(u["localId"], u.get("email", "")) for u in j.get("users", []) if pat.match(u.get("email", ""))]
+        tok = j.get("nextPageToken")
+        if not tok: break
+    for lid, em in hits:
+        if "--dry" in sys.argv: print("would delete", em); continue
+        x = requests.post(f"https://identitytoolkit.googleapis.com/v1/projects/{P}/accounts:delete", headers=H, json={"localId": lid}); print("deleted", em, x.status_code)
+    print(len(hits), "matched")
