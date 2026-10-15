@@ -1,0 +1,20 @@
+{
+ "app": "grammarlyisdead",
+ "orig": "https://www.grammarly.com",
+ "clone": "http://localhost:3301/grammarlyisdead",
+ "viewports": [
+  "390x844"
+ ],
+ "pages": [
+  {
+   "name": "home",
+   "orig": "/",
+   "clone": "/",
+   "full": true
+  }
+ ],
+ "origKeepAnim": true,
+ "scrollStep": 300,
+ "scrollDwell": 200,
+ "out": "/workspace/isdead-shots/parity/grammarlyisdead/r6"
+}

@@ -1,0 +1,26 @@
+{
+ "app": "cleanshotxisdead",
+ "orig": "https://cleanshot.com",
+ "clone": "https://yourappisdead.com/cleanshotxisdead",
+ "viewports": [
+  "390x844"
+ ],
+ "pages": [
+  {
+   "name": "login",
+   "orig": "https://cleanshot.com/cloud/login",
+   "clone": "/login"
+  },
+  {
+   "name": "signup",
+   "orig": "https://cleanshot.com/cloud/login",
+   "clone": "/login"
+  }
+ ],
+ "origKeepAnim": true,
+ "scrollStep": 300,
+ "scrollDwell": 200,
+ "clampX": true,
+ "out": "/workspace/isdead-shots/parity/cleanshotxisdead/r7live",
+ "origDefaultUA": true
+}

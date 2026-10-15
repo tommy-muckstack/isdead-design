@@ -1,0 +1,25 @@
+{
+ "app": "linearisdead",
+ "orig": "https://linear.app",
+ "clone": "https://yourappisdead.com/linearisdead",
+ "viewports": [
+  "390x844"
+ ],
+ "pages": [
+  {
+   "name": "login",
+   "orig": "/login",
+   "clone": "/login"
+  },
+  {
+   "name": "signup",
+   "orig": "/signup",
+   "clone": "/login"
+  }
+ ],
+ "origKeepAnim": true,
+ "scrollStep": 300,
+ "scrollDwell": 200,
+ "clampX": true,
+ "out": "/workspace/isdead-shots/parity/linearisdead/r7live"
+}
