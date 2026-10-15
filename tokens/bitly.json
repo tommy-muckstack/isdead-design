@@ -1,0 +1,85 @@
+{
+  "name": "bitly",
+  "source": "bitly.com homepage look (blue #1A5BFF primary, orange #EE6123 accent, warm cream-to-blue hero, 8px controls), original art, measured 2026-10-14",
+  "font": {
+    "sans": "Lexend",
+    "display": "Lexend",
+    "files": {
+      "Lexend": "bitly/Lexend-Variable.woff2"
+    },
+    "mono": "ui-monospace, SFMono-Regular, Menlo, monospace",
+    "note": "Bitly's brand sans is proprietary and not shipped. Lexend (OFL) is our lookalike: wide, even-spaced, highly legible geometric sans."
+  },
+  "color": {
+    "bg": "#FFFFFF",
+    "surface": "#FFFFFF",
+    "surfaceAlt": "#F5F6FA",
+    "text": "#0F1222",
+    "textMuted": "#4A4F68",
+    "textSubtle": "#8B8FA6",
+    "border": "#DFE1EC",
+    "borderStrong": "#0F1222",
+    "danger": "#C62828",
+    "success": "#1B7F4B",
+    "warning": "#B7791F",
+    "onPrimary": "#FFFFFF",
+    "onAccent": "#FFFFFF",
+    "primary": "#1A5BFF",
+    "primaryHover": "#0D47DB",
+    "accent": "#EE6123",
+    "accentHover": "#D4501A",
+    "accentSoft": "#FFE9DE",
+    "focus": "#1A5BFF",
+    "heroFrom": "#FFF3EB",
+    "heroMid": "#F3F5FF",
+    "heroTo": "#E3ECFF"
+  },
+  "radius": {
+    "xs": "4px",
+    "sm": "6px",
+    "md": "8px",
+    "lg": "12px",
+    "xl": "20px",
+    "pill": "9999px"
+  },
+  "space": {
+    "1": "4px",
+    "2": "8px",
+    "3": "12px",
+    "4": "16px",
+    "5": "20px",
+    "6": "24px",
+    "8": "32px",
+    "10": "40px",
+    "12": "48px",
+    "16": "64px"
+  },
+  "shadow": {
+    "sm": "0 1px 2px rgba(15,18,34,.08)",
+    "md": "0 4px 16px rgba(15,18,34,.10)",
+    "lg": "0 16px 48px rgba(15,18,34,.16)"
+  },
+  "type": {
+    "xs": "12px",
+    "sm": "14px",
+    "md": "16px",
+    "lg": "18px",
+    "xl": "24px",
+    "2xl": "32px",
+    "3xl": "44px",
+    "4xl": "60px",
+    "weightBody": 400,
+    "weightStrong": 600,
+    "weightHeading": 700,
+    "tracking": "-0.02em",
+    "lineHeight": 1.5
+  },
+  "control": {
+    "height": "48px",
+    "heightSm": "36px",
+    "borderWidth": "1px",
+    "buttonRadius": "8px",
+    "inputRadius": "8px",
+    "cardRadius": "16px"
+  }
+}
