@@ -31,7 +31,7 @@ const reuse = !!arg('reuse-orig', false); // skip re-capturing originals that al
 const only = arg("only", null)?.split(",");
 const hideCss = (cfg.hideCss || "") + `
  *,*::before,*::after{animation:none!important;transition:none!important;caret-color:transparent!important;scroll-behavior:auto!important}
- nextjs-portal,[data-nextjs-toast],[id*=intercom],[class*=intercom],iframe[title*=hat i],#onetrust-consent-sdk,[id*=drift],[class*=cookie-banner]{display:none!important}`;
+ nextjs-portal,[data-nextjs-toast],[id*=intercom]:not(html):not(body),[class*=intercom]:not(html):not(body),iframe[title*=hat i],#onetrust-consent-sdk,[id*=drift]:not(html):not(body),[class*=cookie-banner]:not(html):not(body){display:none!important}`;
 let pages = cfg.pages || String(arg("pages", "home=/")).split(",").map(s => { const [name, rest] = s.split("="); const [o, c] = rest.split("->"); return { name, orig: o, clone: c || o }; });
 if (only) pages = pages.filter(p => only.includes(p.name));
 fs.mkdirSync(outDir, { recursive: true });
@@ -43,14 +43,14 @@ async function run(page, actions = []) {
     else if (a.press) await page.keyboard.press(a.press);
     else if (a.hover) await page.locator(a.hover).first().hover().catch(() => { });
     else if (a.wait) await page.waitForTimeout(a.wait);
-    else if (a.goto) await page.goto(a.goto, { waitUntil: "networkidle" });
+    else if (a.goto) await page.goto(a.goto, { waitUntil: "load", timeout: 45000 });
   }
 }
-async function settle(page, full) {
-  await page.addStyleTag({ content: hideCss }).catch(() => { });
+async function settle(page, full, keepAnim) {
+  await page.addStyleTag({ content: keepAnim ? hideCss.replace(/\*,\*::before,\*::after\{animation:none[^}]*\}/, '') : hideCss }).catch(() => { });
   await page.evaluate(() => document.fonts?.ready).catch(() => { });
   if (full) { // trigger lazy content
-    await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 500) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 60)); } window.scrollTo(0, 0); });
+    await page.evaluate(async ({ step, dwell }) => { for (let y = 0; y < document.body.scrollHeight; y += step) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, dwell)); } window.scrollTo(0, 0); }, { step: cfg.scrollStep || 500, dwell: cfg.scrollDwell || 60 });
     await page.waitForTimeout(400);
   }
   await page.waitForTimeout(500);
@@ -63,16 +63,18 @@ async function shot(browser, url, vp, file, p, storage, full, isOrig) {
 }
 async function shot1(browser, url, vp, file, p, storage, full, isOrig, mustNow) {
   const ctx = await browser.newContext({ viewport: { width: vp.w, height: vp.h }, deviceScaleFactor: 1, isMobile: vp.w < 500, hasTouch: vp.w < 500, storageState: storage || undefined, locale: "en-US", timezoneId: "America/New_York",
-    userAgent: vp.w < 500 ? "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" });
+    userAgent: (isOrig && cfg.origDefaultUA && vp.w >= 500) ? undefined : vp.w < 500 ? "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" });
   const page = await ctx.newPage();
   if (isOrig && block.length) await page.route('**/*', r => block.some(b => r.request().url().includes(b)) ? r.abort() : r.continue());
   let status = 0;
-  try { const r = await page.goto(url, { waitUntil: "networkidle", timeout: 60000 }); status = r?.status() || 0; } catch (e) { try { await page.waitForTimeout(1500); } catch { } }
+  try { const r = await page.goto(url, { waitUntil: "load", timeout: 45000 }); status = r?.status() || 0; await page.waitForLoadState("networkidle", { timeout: 8000 }).catch(() => { }); await page.waitForTimeout(2500); } catch (e) { try { await page.waitForTimeout(1500); } catch { } }
   await run(page, p.actions);
   if (mustNow) await page.waitForTimeout(1500);
   if (mustNow && !(await page.locator(mustNow.startsWith('text=') || /[.#\[]/.test(mustNow) ? mustNow : 'text=' + mustNow).first().isVisible().catch(() => false))) { await ctx.close(); return null; }
-  await settle(page, full);
+  await settle(page, full, p.keepAnim || (isOrig && cfg.origKeepAnim));
+  if (cfg.clampX || p.clampX) { await page.addStyleTag({ content: 'html,body{overflow-x:clip!important;max-width:100vw!important}' }).catch(() => { }); await page.waitForTimeout(300); }
   await page.screenshot({ path: file, fullPage: full });
+  if (cfg.clampX || p.clampX) { const im = PNG.sync.read(fs.readFileSync(file)); if (im.width > vp.w) { const o = new PNG({ width: vp.w, height: im.height }); PNG.bitblt(im, o, 0, 0, vp.w, im.height, 0, 0); fs.writeFileSync(file, PNG.sync.write(o)); } }
   const m = await page.evaluate(() => ({ title: document.title, scrollW: document.documentElement.scrollWidth, innerW: innerWidth })).catch(() => ({}));
   await ctx.close(); return { status, ...m };
 }
@@ -95,7 +97,7 @@ for (const p of pages) for (const vp of viewports) {
   const W = Math.max(a.width, b.width), H = Math.max(a.height, b.height);
   a = pad(a, W, H); b = pad(b, W, H);
   const d = new PNG({ width: W, height: H });
-  const diffPx = pixelmatch(a.data, b.data, d.data, W, H, { threshold: 0.12, includeAA: false, diffColor: [255, 0, 80], alpha: 0.25 });
+  const diffPx = pixelmatch(a.data, b.data, d.data, W, H, { threshold: 0.04, includeAA: false, diffColor: [255, 0, 80], alpha: 0.25 });
   const diffPct = 100 * diffPx / (W * H);
   const sim = await coarse(a, b);
   const hRatio = Math.min(a.height, b.height) / Math.max(a.height, b.height);

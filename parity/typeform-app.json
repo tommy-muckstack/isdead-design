@@ -1,0 +1,17 @@
+{
+ "app": "typeformisdead-app",
+ "orig": "https://www.typeform.com",
+ "clone": "http://localhost:3206/typeformisdead",
+ "viewports": ["1920x1114"],
+ "cloneStorage": "parity/typeform-clone-storage.json",
+ "pages": [
+  { "name": "app-workspace", "orig": "/", "clone": "/app" },
+  { "name": "builder", "orig": "/", "clone": "/app", "actions": [{ "click": "a[href*='/app/forms/']" }, { "wait": 1500 }] },
+  { "name": "builder-add", "orig": "/", "clone": "/app", "actions": [{ "click": "a[href*='/app/forms/']" }, { "wait": 1500 }, { "click": "role=button[name=/Add content/]" }, { "wait": 600 }] },
+  { "name": "builder-design", "orig": "/", "clone": "/app", "actions": [{ "click": "a[href*='/app/forms/']" }, { "wait": 1500 }, { "click": "role=button[name=/Design/]" }, { "wait": 600 }] },
+  { "name": "builder-share", "orig": "/", "clone": "/app", "actions": [{ "click": "a[href*='/app/forms/']" }, { "wait": 1500 }, { "click": "role=button[name='Share']" }, { "wait": 800 }] },
+  { "name": "builder-results", "orig": "/", "clone": "/app", "actions": [{ "click": "a[href*='/app/forms/']" }, { "wait": 1500 }, { "click": "role=tab[name=/Results/]" }, { "wait": 800 }] },
+  { "name": "create-modal", "orig": "/", "clone": "/app", "actions": [{ "click": "role=button[name=/Create form/]" }, { "wait": 800 }] },
+  { "name": "fill-view", "orig": "/", "clone": "/app", "actions": [{ "click": "a[href*='/app/forms/']" }, { "wait": 1500 }, { "click": "role=button[name='Preview']" }, { "wait": 800 }] }
+ ]
+}

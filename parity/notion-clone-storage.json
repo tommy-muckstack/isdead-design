@@ -1,0 +1,29 @@
+{
+  "cookies": [
+    {
+      "name": "isdead_demo",
+      "value": "demo.dleEBho3Z-4vX-VnoBWyHkpezDGPo6AdGUDptXNT7E0",
+      "domain": "localhost",
+      "path": "/",
+      "expires": 1793252344.446192,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "http://localhost:3204",
+      "localStorage": [
+        {
+          "name": "notionisdead:demo:ws",
+          "value": "{\"pages\":[{\"id\":\"pg_mv93zch80x2s\",\"title\":\"Getting started\",\"icon\":\"👋\",\"parentId\":null,\"blocks\":[{\"id\":\"b_mv93zch80yxf\",\"type\":\"p\",\"text\":\"Welcome! This page is a real document: click any line and type.\"},{\"id\":\"b_mv93zch81ehz\",\"type\":\"h2\",\"text\":\"Try these\"},{\"id\":\"b_mv93zch82803\",\"type\":\"bullet\",\"text\":\"Type `/` on an empty line to pick a block type\"},{\"id\":\"b_mv93zch838ue\",\"type\":\"bullet\",\"text\":\"Start a line with `# `, `- `, `1. `, `[] ` or `> ` to turn it into a heading, list, to-do or quote\"},{\"id\":\"b_mv93zch84lsf\",\"type\":\"bullet\",\"text\":\"Select text? Wrap it in **double stars** for bold, *single stars* for italic, `backticks` for code\"},{\"id\":\"b_mv93zch852l2\",\"type\":\"bullet\",\"text\":\"Link to another page with [[Weekly planning]]\"},{\"id\":\"b_mv93zch86wy0\",\"type\":\"bullet\",\"text\":\"Move a block with ⌘⇧↑ / ⌘⇧↓, and search everything with ⌘K\"},{\"id\":\"b_mv93zch87g1i\",\"type\":\"h2\",\"text\":\"Your first to-dos\"},{\"id\":\"b_mv93zch88nh6\",\"type\":\"todo\",\"text\":\"Open the demo\",\"checked\":true},{\"id\":\"b_mv93zch89d40\",\"type\":\"todo\",\"text\":\"Add a page from the sidebar\",\"checked\":false},{\"id\":\"b_mv93zch8a3c5\",\"type\":\"todo\",\"text\":\"Export this page as Markdown\",\"checked\":false},{\"id\":\"b_mv93zch8bx5a\",\"type\":\"callout\",\"text\":\"Everything is stored as plain Markdown, so you can take it with you.\"}],\"favorite\":true,\"trashed\":false,\"createdAt\":\"2026-10-15T05:39:06.091Z\",\"updatedAt\":\"2026-10-15T05:39:06.091Z\",\"order\":0},{\"id\":\"pg_mv93zcha1k37\",\"title\":\"Weekly planning\",\"icon\":\"🗓️\",\"parentId\":null,\"blocks\":[{\"id\":\"b_mv93zchac0i6\",\"type\":\"h2\",\"text\":\"This week\"},{\"id\":\"b_mv93zchadeyt\",\"type\":\"todo\",\"text\":\"Draft the launch post\",\"checked\":false},{\"id\":\"b_mv93zchaeulk\",\"type\":\"todo\",\"text\":\"Review pricing page copy\",\"checked\":false},{\"id\":\"b_mv93zchafq1l\",\"type\":\"todo\",\"text\":\"Book the design review\",\"checked\":true},{\"id\":\"b_mv93zchagito\",\"type\":\"h2\",\"text\":\"Notes\"},{\"id\":\"b_mv93zchahs1o\",\"type\":\"p\",\"text\":\"Back to [[Getting started]]. The roadmap lives in [[Roadmap]].\"}],\"favorite\":false,\"trashed\":false,\"createdAt\":\"2026-10-15T05:39:06.091Z\",\"updatedAt\":\"2026-10-15T05:39:06.091Z\",\"order\":1},{\"id\":\"pg_mv93zcha2xci\",\"title\":\"Roadmap\",\"icon\":\"🧭\",\"parentId\":\"pg_mv93zcha1k37\",\"blocks\":[{\"id\":\"b_mv93zchaigpt\",\"type\":\"h1\",\"text\":\"Roadmap\"},{\"id\":\"b_mv93zchajscb\",\"type\":\"number\",\"text\":\"Ship the editor\"},{\"id\":\"b_mv93zchakwkp\",\"type\":\"number\",\"text\":\"Add page sharing\"},{\"id\":\"b_mv93zchalxo8\",\"type\":\"number\",\"text\":\"Write the docs\"},{\"id\":\"b_mv93zchamhz6\",\"type\":\"code\",\"text\":\"const status = \\\"in progress\\\";\",\"lang\":\"ts\"},{\"id\":\"b_mv93zchangr4\",\"type\":\"divider\",\"text\":\"\"},{\"id\":\"b_mv93zchaomj9\",\"type\":\"p\",\"text\":\"Questions? Add them under **Notes** in [[Weekly planning]].\"}],\"favorite\":false,\"trashed\":false,\"createdAt\":\"2026-10-15T05:39:06.091Z\",\"updatedAt\":\"2026-10-15T05:39:06.091Z\",\"order\":0}],\"recent\":[\"pg_mv93zch80x2s\"]}"
+        },
+        {
+          "name": "notionisdead:demo:expanded",
+          "value": "{}"
+        }
+      ]
+    }
+  ]
+}

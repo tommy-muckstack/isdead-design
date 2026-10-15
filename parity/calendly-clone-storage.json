@@ -1,0 +1,15 @@
+{
+  "cookies": [
+    {
+      "name": "isdead_demo",
+      "value": "demo-user.4vw6WH9yspsb6SekeAUEPpcQQ8e_qbI9flLcR4mrSug",
+      "domain": "localhost",
+      "path": "/",
+      "expires": 1793240599.254895,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}

@@ -1,0 +1,13 @@
+import { chromium } from "playwright";
+const [url,out,w,h]=process.argv.slice(2);
+const b=await chromium.launch(); const c=await b.newContext({viewport:{width:+w,height:+h},userAgent:"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"});
+const p=await c.newPage(); await p.goto(url,{waitUntil:"load",timeout:60000}).catch(e=>console.log(e.message));
+await p.waitForTimeout(3000);
+await p.addStyleTag({content:"*{animation:none!important;transition:none!important}"});
+await p.evaluate(async()=>{for(let y=0;y<document.body.scrollHeight;y+=300){window.scrollTo(0,y);await new Promise(r=>setTimeout(r,250));}window.scrollTo(0,0)});
+await p.waitForTimeout(800);
+console.log(await p.evaluate(()=>document.documentElement.scrollHeight));
+await p.screenshot({path:out,fullPage:true});
+await p.evaluate(()=>{const t=document.body.innerText;return t}).then(t=>require?0:0).catch(()=>{});
+const txt=await p.evaluate(()=>document.body.innerText); (await import('fs')).writeFileSync(out.replace('.png','.txt'),txt);
+await b.close();

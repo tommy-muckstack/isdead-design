@@ -1,0 +1,7 @@
+import { chromium } from "playwright";
+const b=await chromium.launch(); const c=await b.newContext({viewport:{width:390,height:844},userAgent:"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"});
+let p;for(let i=0;i<10;i++){const cc=await b.newContext({viewport:{width:390,height:844},userAgent:"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"});p=await cc.newPage();await p.goto("https://superhuman.com",{waitUntil:"load"});await p.waitForTimeout(4000);if((await p.evaluate(()=>document.body.innerText)).includes("Bring AI inside"))break;await cc.close()}
+const r=await p.evaluate(()=>{const out=[];for(const el of document.querySelectorAll('main h1,main h2,main h3,main p,main blockquote,main figcaption,main cite,main span')){
+ const tw=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let n;const words=[];while(n=tw.nextNode()){const re=/\S+/g;let m;while(m=re.exec(n.data)){const rg=document.createRange();rg.setStart(n,m.index);rg.setEnd(n,m.index+m[0].length);const rr=rg.getBoundingClientRect();if(rr.width)words.push([m[0],Math.round(rr.top)])}}
+ if(!words.length||words.length<2)continue;const lines=[];let cur=[],ct=null;for(const [w,t] of words){if(ct!==null&&Math.abs(t-ct)>6){lines.push(cur.join(' '));cur=[]}ct=t;cur.push(w)}lines.push(cur.join(' '));out.push(lines.join(' | '))}return out});
+console.log(r.join('\n'));await b.close();

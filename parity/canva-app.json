@@ -1,0 +1,143 @@
+{
+ "app": "canvaisdead-app",
+ "orig": "https://www.canva.com",
+ "clone": "http://localhost:3205/canvaisdead",
+ "viewports": [
+  "1920x1114"
+ ],
+ "cloneStorage": "parity/canva-clone-storage.json",
+ "pages": [
+  {
+   "name": "app-home",
+   "orig": "/",
+   "clone": "/app"
+  },
+  {
+   "name": "app-projects",
+   "orig": "/",
+   "clone": "/app/projects"
+  },
+  {
+   "name": "app-templates",
+   "orig": "/",
+   "clone": "/app/templates"
+  },
+  {
+   "name": "ed-blank",
+   "orig": "/",
+   "clone": "/app",
+   "actions": [
+    {
+     "click": "button:has-text('Presentation')"
+    },
+    {
+     "wait": 2500
+    }
+   ]
+  },
+  {
+   "name": "ed-elements",
+   "orig": "/",
+   "clone": "/app",
+   "actions": [
+    {
+     "click": "button:has-text('Presentation')"
+    },
+    {
+     "wait": 2500
+    },
+    {
+     "click": "nav[aria-label=Tools] >> text=Elements"
+    },
+    {
+     "wait": 500
+    }
+   ]
+  },
+  {
+   "name": "ed-text",
+   "orig": "/",
+   "clone": "/app",
+   "actions": [
+    {
+     "click": "button:has-text('Presentation')"
+    },
+    {
+     "wait": 2500
+    },
+    {
+     "click": "nav[aria-label=Tools] >> text=Text"
+    },
+    {
+     "wait": 500
+    }
+   ]
+  },
+  {
+   "name": "ed-text-selected",
+   "orig": "/",
+   "clone": "/app",
+   "actions": [
+    {
+     "click": "button:has-text('Presentation')"
+    },
+    {
+     "wait": 2500
+    },
+    {
+     "click": "nav[aria-label=Tools] >> text=Text"
+    },
+    {
+     "wait": 500
+    },
+    {
+     "click": "button:has-text('Add a heading')"
+    },
+    {
+     "wait": 800
+    }
+   ]
+  },
+  {
+   "name": "ed-share",
+   "orig": "/",
+   "clone": "/app",
+   "actions": [
+    {
+     "click": "button:has-text('Presentation')"
+    },
+    {
+     "wait": 2500
+    },
+    {
+     "click": "button.cv-share"
+    },
+    {
+     "wait": 600
+    }
+   ]
+  },
+  {
+   "name": "ed-export",
+   "orig": "/",
+   "clone": "/app",
+   "actions": [
+    {
+     "click": "button:has-text('Presentation')"
+    },
+    {
+     "wait": 2500
+    },
+    {
+     "click": "button.cv-share"
+    },
+    {
+     "click": "text=Download"
+    },
+    {
+     "wait": 600
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+import { chromium } from "playwright";
+const b=await chromium.launch(); const c=await b.newContext({viewport:{width:390,height:844},userAgent:"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"});
+const p=await c.newPage(); await p.goto("https://superhuman.com",{waitUntil:"load"});await p.waitForTimeout(3000);
+await p.evaluate(async()=>{for(let y=0;y<document.body.scrollHeight;y+=300){window.scrollTo(0,y);await new Promise(r=>setTimeout(r,200));}window.scrollTo(0,0)});
+const r=await p.evaluate(()=>{const out=[];for(const el of document.querySelectorAll('main *')){const r=el.getBoundingClientRect();const cs=getComputedStyle(el);
+ const t=(el.children.length==0||/^(H1|H2|H3|P|A|BUTTON|SPAN)$/.test(el.tagName))&&el.textContent.trim().length>2&&el.textContent.trim().length<90&&r.height>8;
+ const box=r.width>=300&&r.width<=360&&r.height>120&&cs.backgroundColor!='rgba(0, 0, 0, 0)';
+ if(t&&el.children.length<2)out.push(['T',el.tagName,Math.round(r.left),Math.round(r.top+scrollY),Math.round(r.width),Math.round(r.height),cs.fontSize+'/'+cs.lineHeight+' w'+cs.fontWeight,cs.color,el.textContent.trim().slice(0,40)]);
+ if(box||el.tagName=='BUTTON'||(el.tagName=='A'&&cs.backgroundColor!='rgba(0, 0, 0, 0)'))out.push(['B',el.tagName,Math.round(r.left),Math.round(r.top+scrollY),Math.round(r.width),Math.round(r.height),cs.backgroundColor,cs.borderRadius,(el.className+'').slice(0,30)])}return out});
+for(const x of r)console.log(x.join(' | '));
+await b.close();

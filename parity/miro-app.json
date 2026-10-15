@@ -1,0 +1,15 @@
+{
+ "app": "miroisdead-app",
+ "orig": "https://miro.com",
+ "clone": "http://localhost:3201/miroisdead",
+ "viewports": ["1920x1114"],
+ "cloneStorage": "parity/miro-clone-storage.json",
+ "pages": [
+  { "name": "app-create-menu", "orig": "/", "clone": "/app", "actions": [{ "click": "[data-testid=create-menu]" }, { "wait": 400 }] },
+  { "name": "app-templates", "orig": "/", "clone": "/app", "actions": [{ "click": "[data-testid=create-menu]" }, { "click": "text=Explore templates" }, { "wait": 900 }] },
+  { "name": "app-profile-menu", "orig": "/", "clone": "/app", "actions": [{ "click": "[aria-label=Account]" }, { "wait": 400 }] },
+  { "name": "board-empty", "orig": "/", "clone": "/app", "actions": [{ "click": "[data-testid=new-blank]" }, { "wait": 1500 }] },
+  { "name": "board-shapes", "orig": "/", "clone": "/app", "actions": [{ "click": "[data-testid=new-blank]" }, { "wait": 1200 }, { "click": "[aria-label='Shapes and lines']" }, { "wait": 400 }] },
+  { "name": "board-share", "orig": "/", "clone": "/app", "actions": [{ "click": "[data-testid=new-blank]" }, { "wait": 1200 }, { "click": "[data-testid=share]" }, { "wait": 600 }] }
+ ]
+}

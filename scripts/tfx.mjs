@@ -1,0 +1,3 @@
+import {chromium} from "playwright";
+const b=await chromium.launch();const p=await b.newPage({viewport:{width:1440,height:900}});await p.goto("https://www.typeform.com/",{waitUntil:"load"});await p.waitForTimeout(4000);
+console.log(await p.evaluate(()=>({sh:document.documentElement.scrollHeight,bh:document.body.scrollHeight,ov:getComputedStyle(document.documentElement).overflow+'/'+getComputedStyle(document.body).overflow,sc:[...document.querySelectorAll('*')].filter(e=>e.scrollHeight>e.clientHeight+500&&['auto','scroll'].includes(getComputedStyle(e).overflowY)).map(e=>e.tagName+'.'+e.className.toString().slice(0,30)+' '+e.scrollHeight)})));await b.close();

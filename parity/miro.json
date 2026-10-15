@@ -1,0 +1,35 @@
+{
+ "app": "miroisdead",
+ "orig": "https://miro.com",
+ "clone": "http://localhost:3201/miroisdead",
+ "viewports": [
+  "1440x900",
+  "390x844"
+ ],
+ "pages": [
+  {
+   "name": "home",
+   "orig": "/",
+   "clone": "/",
+   "full": true
+  },
+  {
+   "name": "login",
+   "orig": "/login/",
+   "clone": "/login"
+  },
+  {
+   "name": "signup",
+   "orig": "/signup/",
+   "clone": "/signup"
+  },
+  {
+   "name": "pricing",
+   "orig": "/pricing/",
+   "clone": "/pricing",
+   "full": true
+  }
+ ],
+ "scrollStep": 250,
+ "scrollDwell": 300
+}

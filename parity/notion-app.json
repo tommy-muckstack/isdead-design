@@ -1,0 +1,42 @@
+{
+ "app": "notionisdead-app",
+ "orig": "https://www.notion.so",
+ "clone": "http://localhost:3204/notionisdead",
+ "viewports": [
+  "1920x1114"
+ ],
+ "cloneStorage": "parity/notion-clone-storage.json",
+ "pages": [
+  {
+   "name": "app-home",
+   "orig": "/",
+   "clone": "/app"
+  },
+  {
+   "name": "app-new-page-empty",
+   "orig": "/",
+   "clone": "/app",
+   "actions": [
+    {
+     "click": "[data-testid=new-page]"
+    },
+    {
+     "wait": 800
+    }
+   ]
+  },
+  {
+   "name": "app-search",
+   "orig": "/",
+   "clone": "/app",
+   "actions": [
+    {
+     "click": "[data-testid=open-search]"
+    },
+    {
+     "wait": 500
+    }
+   ]
+  }
+ ]
+}

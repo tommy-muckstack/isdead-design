@@ -1,0 +1,35 @@
+{
+ "app": "grammarlyisdead",
+ "orig": "https://www.grammarly.com",
+ "clone": "https://grammarlyisdead.vercel.app/grammarlyisdead",
+ "viewports": [
+  "1440x900"
+ ],
+ "pages": [
+  {
+   "name": "home",
+   "orig": "/",
+   "clone": "/",
+   "full": true
+  },
+  {
+   "name": "pricing",
+   "orig": "/plans",
+   "clone": "/pricing",
+   "full": true
+  },
+  {
+   "name": "login",
+   "orig": "/signin",
+   "clone": "/login"
+  },
+  {
+   "name": "signup",
+   "orig": "/signup",
+   "clone": "/login?mode=signup"
+  }
+ ],
+ "origKeepAnim": true,
+ "scrollStep": 300,
+ "scrollDwell": 200
+}

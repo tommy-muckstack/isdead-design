@@ -1,0 +1,36 @@
+{
+ "app": "cleanshotxisdead",
+ "orig": "https://cleanshot.com",
+ "clone": "https://cleanshotxisdead.vercel.app/cleanshotxisdead",
+ "viewports": [
+  "1440x900"
+ ],
+ "pages": [
+  {
+   "name": "home",
+   "orig": "/",
+   "clone": "/",
+   "full": true
+  },
+  {
+   "name": "pricing",
+   "orig": "/pricing",
+   "clone": "/pricing",
+   "full": true
+  },
+  {
+   "name": "login",
+   "orig": "https://cleanshot.com/cloud",
+   "clone": "/login"
+  },
+  {
+   "name": "signup",
+   "orig": "https://cleanshot.com/cloud",
+   "clone": "/login"
+  }
+ ],
+ "origKeepAnim": true,
+ "scrollStep": 300,
+ "scrollDwell": 200,
+ "clampX": true
+}

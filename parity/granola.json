@@ -1,0 +1,35 @@
+{
+ "app": "granolaisdead",
+ "orig": "https://www.granola.ai",
+ "clone": "https://granolaisdead.vercel.app/granolaisdead",
+ "viewports": [
+  "1440x900"
+ ],
+ "pages": [
+  {
+   "name": "home",
+   "orig": "/",
+   "clone": "/",
+   "full": true
+  },
+  {
+   "name": "pricing",
+   "orig": "/pricing",
+   "clone": "/pricing",
+   "full": true
+  },
+  {
+   "name": "login",
+   "orig": "/",
+   "clone": "/login"
+  },
+  {
+   "name": "signup",
+   "orig": "/",
+   "clone": "/login"
+  }
+ ],
+ "origKeepAnim": true,
+ "scrollStep": 300,
+ "scrollDwell": 200
+}

@@ -1,0 +1,38 @@
+{
+ "app": "superhuman-m390",
+ "orig": "https://superhuman.com",
+ "clone": "https://yourappisdead.com/superhumanisdead",
+ "viewports": [
+  "390x844"
+ ],
+ "pages": [
+  {
+   "name": "home",
+   "orig": "/",
+   "clone": "/",
+   "full": true,
+   "origMust": {
+    "390": "Bring AI inside every app"
+   }
+  },
+  {
+   "name": "pricing",
+   "orig": "/pricing",
+   "clone": "/pricing/",
+   "full": true
+  },
+  {
+   "name": "login",
+   "orig": "https://mail.superhuman.com/login",
+   "clone": "/login/",
+   "keepAnim": true,
+   "actions": [
+    {
+     "wait": 2500
+    }
+   ]
+  }
+ ],
+ "scrollStep": 300,
+ "scrollDwell": 200
+}

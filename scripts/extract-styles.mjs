@@ -8,7 +8,7 @@ const [w, h] = String(g("vp", "1440x900")).split("x").map(Number); const out = g
 const must = g("must", null); const b = await chromium.launch(); let ctx, p;
 for (let t = 0; t < 10; t++) { // --must "text": retry fresh contexts until an A/B variant containing the text is visible
   ctx = await b.newContext({ viewport: { width: w, height: h || 900 }, userAgent: w < 500 ? "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 Version/17.5 Mobile/15E148 Safari/604.1" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36", isMobile: w < 500 });
-  p = await ctx.newPage(); await p.goto(url, { waitUntil: "networkidle", timeout: 60000 }).catch(() => { }); await p.waitForTimeout(1500);
+  p = await ctx.newPage(); await p.goto(url, { waitUntil: "load", timeout: 45000, timeout: 60000 }).catch(() => { }); await p.waitForTimeout(1500);
   if (!must || await p.locator("text=" + must).first().isVisible().catch(() => false)) break; await ctx.close(); }
 await p.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { scrollTo(0, y); await new Promise(r => setTimeout(r, 80)); } scrollTo(0, 0); });
 const data = await p.evaluate(() => {

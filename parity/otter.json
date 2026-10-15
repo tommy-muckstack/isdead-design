@@ -1,0 +1,33 @@
+{
+ "app": "otterisdead",
+ "orig": "https://otter.ai",
+ "clone": "https://yourappisdead.com/otterisdead",
+ "viewports": [
+  "1440x900",
+  "390x844"
+ ],
+ "pages": [
+  {
+   "name": "home",
+   "orig": "/",
+   "clone": "/",
+   "full": true
+  },
+  {
+   "name": "pricing",
+   "orig": "/pricing",
+   "clone": "/pricing",
+   "full": true
+  },
+  {
+   "name": "login",
+   "orig": "https://otter.ai/signin",
+   "clone": "/login"
+  },
+  {
+   "name": "signup",
+   "orig": "https://otter.ai/signin",
+   "clone": "/login"
+  }
+ ]
+}
