@@ -23,7 +23,23 @@ Every IsDead app ships exactly three surfaces, hosted at `https://yourappisdead.
 
 ## Login layout
 
-`NavBar` + `.ids-auth` (full-bleed `--ids-gradient-hero`, rounded inset) + `.ids-auth__card` containing: H1, email field, primary full-width button, `Divider label="or"`, outlined provider buttons (only for configured providers), footer link.
+`NavBar` + `.ids-auth` (full-bleed `--ids-gradient-hero`, rounded inset) + `.ids-auth__card` containing: H1, email field, primary full-width button, `Divider label="or"`, provider buttons (only for configured providers), footer link.
+
+### Sign in with Google (required: official branding)
+
+The Google button is **never** a generic outlined `Button` with text. Use `GoogleButton` from `src/google.tsx` (vendored as `@/vendor/isdead-design/src/google`):
+
+```tsx
+<GoogleButton block shape="rect" action="continue" disabled={busy} onClick={...} />
+```
+
+- Logo: Google's official standard-color "G" (cropped from Google's Sign in with Google asset bundle in `assets/google/official/`). Never redraw, recolor, stretch or put it on a colored fill; only the approved `light` (default, white / #747775 stroke), `dark` and `neutral` themes.
+- Spec: 40px high, 12px side padding, 10px logo gap, 20px logo, Google Sans Medium 14/20 (OFL font in `fonts/google/`), radius 4 (`shape="rect"`) or pill (`shape="pill"`; use pill only when the theme's `control.buttonRadius` is 9999px, as the apps' `apply-google-button` script does).
+- Text is limited to `Sign in with Google`, `Sign up with Google` or `Continue with Google` (`action="signin" | "signup" | "continue"`). Never just "Google".
+- Keep it as prominent as the other provider options.
+- Static (non-React) pages: copy the Google block at the end of `css/components.css` plus `fonts/google/`, and inline `assets/google/google-g.svg` (see WisprFlowIsDead `site/wisprflowisdead/login.html`).
+- New Next apps: after vendoring the design system, run `node vendor/isdead-design/scripts/apply-google-button.mjs .` (idempotent) or use `GoogleButton` in `LoginForm.tsx` directly.
+- Guidelines: https://developers.google.com/identity/branding-guidelines
 
 ## Rules
 

@@ -59,3 +59,7 @@ SwiftUI: add `swift/IsDeadTokens.swift` and the theme's fonts to the target, the
 - `superhuman`, `wisprflow`: **drafts** from the teardown specs. Superhuman's dark theme and Wispr's in-app chrome are still estimates. These aren't applied to those apps yet.
 
 Not affiliated with Calendly, Superhuman or Wispr. All trademarks belong to their owners.
+
+## Sign in with Google button
+
+`src/google.tsx` exports `GoogleButton` (+ `GOOGLE_G_SVG`), styled by the `.ids-google-btn` block in `css/components.css`. It uses Google's official "G" logo and the sizing, padding, colors and text from Google's [Sign in with Google branding guidelines](https://developers.google.com/identity/branding-guidelines). `assets/google/official/` keeps two untouched files from Google's bundle; `assets/google/google-g.svg` is the bare logo cropped from them. `node scripts/apply-google-button.mjs <app repo>` syncs it into an app's `vendor/isdead-design` and rewrites its `LoginForm.tsx`.

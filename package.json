@@ -15,7 +15,8 @@
     "./css/*": "./css/*",
     "./tokens/*": "./tokens/*",
     "./tailwind": "./tailwind/preset.cjs",
-    "./fonts/*": "./fonts/*"
+    "./fonts/*": "./fonts/*",
+    "./assets/*": "./assets/*"
   },
   "files": [
     "dist",
@@ -23,6 +24,7 @@
     "tokens",
     "tailwind",
     "fonts",
+    "assets",
     "swift",
     "templates"
   ],
