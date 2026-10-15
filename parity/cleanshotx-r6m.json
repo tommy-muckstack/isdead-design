@@ -1,0 +1,38 @@
+{
+ "app": "cleanshotxisdead",
+ "orig": "https://cleanshot.com",
+ "clone": "http://localhost:3303/cleanshotxisdead",
+ "viewports": [
+  "390x844"
+ ],
+ "pages": [
+  {
+   "name": "home",
+   "orig": "/",
+   "clone": "/",
+   "full": true
+  },
+  {
+   "name": "pricing",
+   "orig": "/pricing",
+   "clone": "/pricing",
+   "full": true
+  },
+  {
+   "name": "login",
+   "orig": "https://cleanshot.com/cloud/login",
+   "clone": "/login"
+  },
+  {
+   "name": "signup",
+   "orig": "https://cleanshot.com/cloud/login",
+   "clone": "/login"
+  }
+ ],
+ "origKeepAnim": true,
+ "scrollStep": 300,
+ "scrollDwell": 200,
+ "clampX": true,
+ "out": "/workspace/isdead-shots/parity/cleanshotxisdead/r6",
+ "origDefaultUA": true
+}

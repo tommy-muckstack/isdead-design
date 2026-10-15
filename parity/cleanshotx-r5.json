@@ -21,17 +21,18 @@
   },
   {
    "name": "login",
-   "orig": "https://cleanshot.com/cloud",
+   "orig": "https://cleanshot.com/cloud/login",
    "clone": "/login"
   },
   {
    "name": "signup",
-   "orig": "https://cleanshot.com/cloud",
+   "orig": "https://cleanshot.com/cloud/login",
    "clone": "/login"
   }
  ],
  "origKeepAnim": true,
  "scrollStep": 300,
  "scrollDwell": 200,
- "clampX": true
+ "clampX": true,
+ "origDefaultUA": true
 }
