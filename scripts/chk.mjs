@@ -1,0 +1,3 @@
+import { chromium } from "playwright";
+const [url]=process.argv.slice(2);const b=await chromium.launch();const p=await b.newPage({viewport:{width:390,height:844},isMobile:true});await p.goto(url,{waitUntil:"load"});await p.waitForTimeout(1500);
+console.log(await p.evaluate(()=>({sh:document.documentElement.scrollHeight,sw:document.documentElement.scrollWidth,mp:[...document.querySelectorAll('.mp')].map(e=>[e.className,getComputedStyle(e).display,e.getBoundingClientRect().height,e.getBoundingClientRect().width]),desk:[...document.querySelectorAll('.mp-desk')].map(e=>getComputedStyle(e).display),txt:document.querySelectorAll('.mp-t').length})));await b.close();
