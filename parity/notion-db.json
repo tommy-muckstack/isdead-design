@@ -1,0 +1,136 @@
+{
+ "app": "notionisdead-app-r8",
+ "orig": "https://www.notion.so",
+ "clone": "http://localhost:3412/notionisdead",
+ "viewports": [
+  "1920x1114"
+ ],
+ "cloneStorage": "parity/notion-clone-storage.json",
+ "pages": [
+  {
+   "name": "app-db-table",
+   "orig": "/",
+   "clone": "/app",
+   "actions": [
+    {
+     "click": "[data-testid=new-page]"
+    },
+    {
+     "wait": 800
+    },
+    {
+     "fill": [
+      ".ntn-title",
+      "Parity Test"
+     ]
+    },
+    {
+     "click": ".ntn-editor .ntn-view"
+    },
+    {
+     "fill": [
+      "textarea.ntn-input",
+      "/table"
+     ]
+    },
+    {
+     "wait": 200
+    },
+    {
+     "press": "Enter"
+    },
+    {
+     "wait": 300
+    },
+    {
+     "fill": [
+      ".ntn-db__table .row input >> nth=0",
+      "Task One"
+     ]
+    },
+    {
+     "fill": [
+      ".ntn-db__table .row input >> nth=1",
+      "Task Two"
+     ]
+    },
+    {
+     "fill": [
+      ".ntn-db__table .row input >> nth=2",
+      "Task Three"
+     ]
+    },
+    {
+     "hover": ".ntn-side"
+    },
+    {
+     "wait": 300
+    }
+   ]
+  },
+  {
+   "name": "app-db-board",
+   "orig": "/",
+   "clone": "/app",
+   "actions": [
+    {
+     "click": "[data-testid=new-page]"
+    },
+    {
+     "wait": 800
+    },
+    {
+     "fill": [
+      ".ntn-title",
+      "Parity Test"
+     ]
+    },
+    {
+     "click": ".ntn-editor .ntn-view"
+    },
+    {
+     "fill": [
+      "textarea.ntn-input",
+      "/table"
+     ]
+    },
+    {
+     "wait": 200
+    },
+    {
+     "press": "Enter"
+    },
+    {
+     "wait": 300
+    },
+    {
+     "fill": [
+      ".ntn-db__table .row input >> nth=0",
+      "Task One"
+     ]
+    },
+    {
+     "fill": [
+      ".ntn-db__table .row input >> nth=1",
+      "Task Two"
+     ]
+    },
+    {
+     "fill": [
+      ".ntn-db__table .row input >> nth=2",
+      "Task Three"
+     ]
+    },
+    {
+     "click": "[aria-label='View settings']"
+    },
+    {
+     "click": "text=Board"
+    },
+    {
+     "wait": 400
+    }
+   ]
+  }
+ ]
+}
