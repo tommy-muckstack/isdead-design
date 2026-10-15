@@ -1,0 +1,35 @@
+{
+ "app": "bitlyisdead",
+ "orig": "https://bitly.com",
+ "clone": "https://yourappisdead.com/bitlyisdead",
+ "viewports": [
+  "1440x900",
+  "390x844"
+ ],
+ "pages": [
+  {
+   "name": "home",
+   "orig": "/",
+   "clone": "/",
+   "full": true
+  },
+  {
+   "name": "pricing",
+   "orig": "/pages/pricing",
+   "clone": "/pricing",
+   "full": true
+  },
+  {
+   "name": "login",
+   "orig": "/",
+   "clone": "/login",
+   "origUrl": "https://bitly.com/a/sign_in"
+  },
+  {
+   "name": "signup",
+   "orig": "/",
+   "clone": "/login",
+   "origUrl": "https://bitly.com/a/sign_in"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "app": "trelloisdead",
+ "orig": "https://trello.com",
+ "clone": "https://trelloisdead.vercel.app/trelloisdead",
+ "viewports": [
+  "1440x900"
+ ],
+ "pages": [
+  {
+   "name": "home",
+   "orig": "/",
+   "clone": "/",
+   "full": true
+  },
+  {
+   "name": "pricing",
+   "orig": "/pricing",
+   "clone": "/pricing",
+   "full": true
+  },
+  {
+   "name": "login",
+   "orig": "/",
+   "clone": "/login",
+   "origUrl": "https://id.atlassian.com/login?application=trello"
+  },
+  {
+   "name": "signup",
+   "orig": "/",
+   "clone": "/login?mode=signup",
+   "origUrl": "https://id.atlassian.com/login?application=trello"
+  }
+ ],
+ "origKeepAnim": true,
+ "scrollStep": 300,
+ "scrollDwell": 200
+}

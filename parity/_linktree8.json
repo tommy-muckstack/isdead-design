@@ -1,0 +1,35 @@
+{
+ "app": "linktreeisdead",
+ "orig": "https://linktr.ee",
+ "clone": "https://yourappisdead.com/linktreeisdead",
+ "viewports": [
+  "1440x900",
+  "390x844"
+ ],
+ "pages": [
+  {
+   "name": "home",
+   "orig": "/",
+   "clone": "/",
+   "full": true
+  },
+  {
+   "name": "pricing",
+   "orig": "/s/pricing",
+   "clone": "/pricing",
+   "full": true
+  },
+  {
+   "name": "login",
+   "orig": "/",
+   "clone": "/login",
+   "origUrl": "https://linktr.ee/login"
+  },
+  {
+   "name": "signup",
+   "orig": "/",
+   "clone": "/login",
+   "origUrl": "https://linktr.ee/register"
+  }
+ ]
+}

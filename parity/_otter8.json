@@ -1,0 +1,39 @@
+{
+ "app": "otterisdead",
+ "orig": "https://otter.ai",
+ "clone": "https://yourappisdead.com/otterisdead",
+ "viewports": [
+  "1440x900",
+  "390x844"
+ ],
+ "pages": [
+  {
+   "name": "home",
+   "orig": "/",
+   "clone": "/",
+   "full": true
+  },
+  {
+   "name": "pricing",
+   "orig": "/pricing",
+   "clone": "/pricing",
+   "full": true
+  },
+  {
+   "name": "login",
+   "orig": "/",
+   "clone": "/login",
+   "origUrl": "https://otter.ai/signin"
+  },
+  {
+   "name": "signup",
+   "orig": "/",
+   "clone": "/login",
+   "origUrl": "https://otter.ai/signin"
+  }
+ ],
+ "origMust": {
+  "1440": "Before, during, and after every meeting",
+  "390": "Like having your own executive assistant"
+ }
+}

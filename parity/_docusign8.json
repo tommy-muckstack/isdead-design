@@ -1,0 +1,35 @@
+{
+ "app": "docusignisdead",
+ "orig": "https://www.docusign.com",
+ "clone": "https://yourappisdead.com/docusignisdead",
+ "viewports": [
+  "1440x900",
+  "390x844"
+ ],
+ "pages": [
+  {
+   "name": "home",
+   "orig": "/",
+   "clone": "/",
+   "full": true
+  },
+  {
+   "name": "pricing",
+   "orig": "/products-and-pricing",
+   "clone": "/pricing",
+   "full": true
+  },
+  {
+   "name": "login",
+   "orig": "/",
+   "clone": "/login",
+   "origUrl": "https://account.docusign.com/"
+  },
+  {
+   "name": "signup",
+   "orig": "/",
+   "clone": "/login",
+   "origUrl": "https://go.docusign.com/o/trial/"
+  }
+ ]
+}
