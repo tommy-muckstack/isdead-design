@@ -12,9 +12,9 @@ const log = (step, o) => console.log(JSON.stringify({ step, ...o }));
 const sess = async () => (await ctx.cookies()).some(c => /session/i.test(c.name) && c.value);
 const vis = async sel => (await p.locator(sel).all()).filter(async l => await l.isVisible());
 async function firstVisible(sel) { for (const l of await p.locator(sel).all()) if (await l.isVisible().catch(() => false)) return l; return null; }
-const SOCIAL = /with|google|apple|microsoft|slack|sso|passkey|chatgpt|outlook|code|forgot|can.t|find my|guide|documentation/i;
+const SOCIAL = /with (google|apple|microsoft|facebook|slack|sso|saml|passkey|chatgpt|outlook|setapp|single)|^(google|apple|microsoft|facebook|slack|sso|passkey|chatgpt|outlook)$|^\W*(sso|\+)|login code|get a login code|forgot|can.t|find my|guide|documentation|another way/i;
 async function clickByText(re, { not, last } = {}) {
-  let els = await p.locator("button, a, [role=button], input[type=submit]").all(); if (last) els = els.reverse();
+  let els = await p.locator("button, a, [role=button], input[type=submit]").all(); const isBtn = async l => (await l.evaluate(e => e.tagName === "BUTTON" || e.tagName === "INPUT" || e.getAttribute("role") === "button").catch(() => false)); const flags = await Promise.all(els.map(isBtn)); els = [...els.filter((_, i) => flags[i]), ...els.filter((_, i) => !flags[i])]; if (last) els = els.reverse();
   for (const l of els) {
     if (!(await l.isVisible().catch(() => false))) continue;
     const t = ((await l.innerText().catch(() => "")) || (await l.getAttribute("value").catch(() => "")) || "").trim();
@@ -34,14 +34,14 @@ async function fillVisible() {
 }
 const PROGRESS = /^(continue|next|log ?in|sign ?in|sign ?up( for free)?|create( an| a)?( new| free)? account|get started|register|submit|verify)$/i;
 const PRIO = {
-  signup: [/^(create( an| a)?( new| free)? account|register|get started)$/i, /^(continue|next|submit|verify)$/i, /^sign ?up( for free)?$/i],
-  login: [/^(log ?in|sign ?in)$/i, /^(continue|next|submit|verify)$/i],
+  signup: [/^(create( an| a)?( new| free)? account|register|create my \w+|get started( now)?)$/i, /^(continue( with (work )?email)?|next|submit|verify|take me to my canvas)$/i, /^(agree and )?sign ?up( for free)?$/i],
+  login: [/^(log ?in|sign ?in)$/i, /^(continue( with (work )?email)?|next|submit|verify|get started( now)?)$/i],
 };
 async function wizard(mode, maxSteps = 6) {
   for (let i = 0; i < maxSteps; i++) {
     const did = await fillVisible();
     let clicked = null;
-    if (did.length) { const sb = await firstVisible("form button[type=submit], form input[type=submit]"); if (sb) { clicked = ((await sb.innerText().catch(() => "")) || "submit").trim(); if (SOCIAL.test(clicked)) clicked = null; else await sb.click({ timeout: 5000 }).catch(() => {}); } }
+    if (did.length) { const sb = await firstVisible("form button[type=submit], form input[type=submit], button[type=submit]"); if (sb) { clicked = ((await sb.innerText().catch(() => "")) || "submit").trim(); if (SOCIAL.test(clicked)) clicked = null; else await sb.click({ timeout: 5000 }).catch(() => {}); } }
     if (!clicked) for (const re of PRIO[mode]) { clicked = await clickByText(re, { not: SOCIAL }); if (clicked) break; }
     await p.waitForTimeout(2500);
     log(`${mode}.step${i + 1}`, { did, clicked, url: p.url().replace(base, ""), session: await sess() });
@@ -51,7 +51,9 @@ async function wizard(mode, maxSteps = 6) {
   return false;
 }
 async function logout() {
+  await p.getByText(/log ?out|sign ?out/i).first().waitFor({ timeout: 5000 }).catch(() => {});
   let t = await clickByText(/log ?out|sign ?out/i);
+  if (!t) for (const role of ["button", "link", "menuitem"]) { const l = p.getByRole(role, { name: /log ?out|sign ?out/i }).first(); if (await l.count() && await l.isVisible().catch(() => false)) { await l.click({ timeout: 5000 }).catch(() => {}); t = "role:" + role; break; } }
   if (!t) { // open an avatar / account menu first
     for (const sel of ["[aria-label*=account i]", "[aria-label*=profile i]", "[aria-label*=user i]", "[aria-label*=menu i]", "button[class*=avatar i]", "[class*=avatar i]", "[class*=Avatar]", "header button:last-child", "nav button:last-child"]) {
       const l = await firstVisible(sel); if (!l) continue;
@@ -66,8 +68,10 @@ const res = { app: tag, base, email, signup: false, logout1: false, login: false
 try {
   await p.goto(base + "/login", { waitUntil: "networkidle" });
   // switch to sign up
-  const sw = await clickByText(/^(sign ?up( for free)?|create( an| a new)? account|register)$/i, { last: true });
-  if (!(await firstVisible("input"))) { const o = await clickByText(/other ways|use (an )?email|continue with email|email/i, { not: /google|apple|microsoft/i }); log("signup.reveal-email", { o }); }
+  const sw = await clickByText(/^(sign ?up( for free)?|create( an| a new)? account|register|i don.t have an account|new here\? create an account|sign up or learn more)$/i, { last: true });
+  if (!sw) { const t = p.getByText(/^\s*(create an account|sign up)\s*$/i).last(); if (await t.count() && await t.isVisible().catch(() => false)) { await t.click().catch(() => {}); await p.waitForTimeout(800); log("signup.text-toggle", {}); } }
+  if (!(await firstVisible("input"))) { const o = await clickByText(/other ways|use (an )?email|continue with email|^get started( now)?$|email/i, { not: /google|apple|microsoft|facebook|sso|saml|passkey/i }); log("signup.reveal-email", { o }); }
+  if (!sw) { const t2 = await clickByText(/^(create( an| a new)? account|sign ?up( for free)?|new here\? create an account)$/i, { last: true }); if (t2) { await p.waitForTimeout(800); log("signup.toggle-after-reveal", { t2 }); } }
   await p.waitForTimeout(1500); log("signup.open", { toggle: sw, url: p.url().replace(base, "") });
   res.signup = await wizard("signup");
   if (!res.signup) { res.notes.push("no session after signup"); const bt = (await p.textContent("body")).replace(/\s+/g, " ").slice(0, 200); log("signup.body", { bt }); }
@@ -78,7 +82,7 @@ try {
     await ctx.clearCookies();
   }
   await p.goto(base + "/login", { waitUntil: "networkidle" }); await p.waitForTimeout(800);
-  if (!(await firstVisible("input"))) { const o = await clickByText(/other ways|use (an )?email|continue with email|email/i, { not: /google|apple|microsoft/i }); log("login.reveal-email", { o }); }
+  if (!(await firstVisible("input"))) { const o = await clickByText(/other ways|use (an )?email|continue with email|^get started( now)?$|email/i, { not: /google|apple|microsoft|facebook|sso|saml|passkey/i }); log("login.reveal-email", { o }); }
   res.login = await wizard("login");
   if (res.login) { await p.goto(base + "/app", { waitUntil: "networkidle" }).catch(() => {}); await p.waitForTimeout(800); const lo = await logout(); log("logout2", lo); res.logout2 = !lo.session; }
 } catch (e) { res.notes.push("exception: " + e.message.slice(0, 160)); }
