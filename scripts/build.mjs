@@ -1,7 +1,9 @@
 // Generates css/<theme>.css, tailwind/preset.cjs, swift/IsDeadTokens.swift from tokens/*.json
 import fs from "node:fs"; import path from "node:path";
 const root = path.dirname(path.dirname(new URL(import.meta.url).pathname));
-const themes = ["calendly", "superhuman", "wisprflow"].map(n => JSON.parse(fs.readFileSync(`${root}/tokens/${n}.json`, "utf8")));
+const names = fs.readdirSync(`${root}/tokens`).filter(f => f.endsWith(".json")).map(f => f.slice(0, -5));
+const order = ["calendly", "superhuman", "wisprflow"]; // calendly stays first: it is the Tailwind/Swift reference theme
+const themes = [...order, ...names.filter(n => !order.includes(n)).sort()].map(n => JSON.parse(fs.readFileSync(`${root}/tokens/${n}.json`, "utf8")));
 const kebab = s => s.replace(/[A-Z]/g, m => "-" + m.toLowerCase());
 const groups = ["color", "radius", "space", "shadow", "type", "control"];
 for (const t of themes) {

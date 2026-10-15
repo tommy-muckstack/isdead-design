@@ -26,6 +26,13 @@ scripts/build.mjs        regenerates css/, tailwind/ and swift/ from tokens/
 | `calendly` | live calendly.com CSS (brand-2026 tokens), login screenshot, booking CSS | **Geist** (OFL) | calendly.com's 2026 marketing pages use Geist themselves. Their in-app Proxima Nova is proprietary and is not shipped. |
 | `superhuman` | DuperHuman `docs/SUPERHUMAN_SPEC.md` (pixel-sampled live app) | **Inter** (OFL) | Superhuman's grotesk, SuperMailSerif and Adelle are proprietary. Inter is the closest open stand-in. |
 | `wisprflow` | WisprFlowIsDead `docs/WISPRFLOW_SPEC.md` §10 (wisprflow.ai CSS) | **Figtree** body + **EB Garamond** display (both OFL) | These are the fonts Wispr Flow itself uses. |
+| `miro` | MiroIsDead (miro.com homepage palette: #4262FF blue, #FFE86D sticky yellow, lavender→mint hero gradient) | **Albert Sans** display + **Noto Sans** body (both OFL) | Miro uses proprietary Roobert PRO for display; Albert Sans is the closest open stand-in. Noto Sans is what miro.com uses for body text. |
+| `canva` | canva.com homepage palette (violet #7D2AE8, teal #00C4CC, rainbow gradient) | **Plus Jakarta Sans** (OFL) | Canva uses proprietary Canva Sans; Plus Jakarta Sans is the closest open stand-in. |
+| `typeform` | typeform.com palette (near-black, warm off-white, soft pastel accents) | **Instrument Sans** (OFL) | Typeform uses proprietary Apercu; Instrument Sans has the same grotesk feel. |
+| `docusign` | docusign.com palette (ink #130032 and the signature yellow-on-purple CTA) | **Public Sans** (OFL) | DocuSign's brand faces are proprietary; Public Sans is a neutral open stand-in. |
+| `grammarly` | grammarly.com palette (green #15C39A, deep green-black, soft mint) | **Onest** (OFL) | Grammarly's Inter/Sans-like brand face is approximated by Onest. |
+| `granola` | granola.ai palette (warm cream, deep green, serif display) | **Newsreader** display + **Hanken Grotesk** body (OFL) | Granola pairs a serif display with a clean grotesk; these are close open matches. |
+| `cleanshotx` | cleanshot.com palette (dark UI with violet accent) | **Schibsted Grotesk** (OFL) | An open grotesk close to CleanShot's marketing type. |
 
 Fonts register under an `IsDead ` prefix (e.g. `"IsDead Geist"`) so they never collide with system installs.
 

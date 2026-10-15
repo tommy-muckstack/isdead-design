@@ -30,4 +30,5 @@ export function Section({ id, title, subtitle, children, className, style }) {
 export function Footer({ columns, note }) {
     return _jsxs("footer", { children: [_jsx("div", { className: "ids-footer", children: columns.map(c => _jsxs("div", { children: [_jsx("h4", { children: c.title }), c.links.map(l => _jsx("a", { href: l.href, children: l.label }, l.label))] }, c.title)) }), note && _jsx("p", { className: "ids-muted", style: { textAlign: "center", fontSize: 13, padding: "0 32px 40px" }, children: note })] });
 }
-export const themes = ["calendly", "superhuman", "wisprflow"];
+export const themes = ["calendly", "superhuman", "wisprflow", "miro", "canva", "typeform", "docusign", "grammarly", "granola", "cleanshotx"];
+export * from "./google";
